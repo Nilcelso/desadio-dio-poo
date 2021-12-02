@@ -1,4 +1,6 @@
+import br.com.nilcelso.poo.Bootcamp;
 import br.com.nilcelso.poo.Curso;
+import br.com.nilcelso.poo.Dev;
 import br.com.nilcelso.poo.Mentoria;
 
 import java.time.LocalDate;
@@ -23,6 +25,37 @@ public class Main {
         System.out.println(curso1);
         System.out.println(curso2);
         System.out.println(mentoria1);
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descriçao do Bootcamp");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria1);
+
+        Dev devNil = new Dev();
+        devNil.setNome("Nilcelso");
+        devNil.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos Inscritos Nilcelso" + devNil.getConteudosInscritos());
+        devNil.progredir();
+        System.out.println("Conteudos Inscritos Nilcelso" + devNil.getConteudosInscritos());
+        devNil.progredir();
+        System.out.println("Conteudos Inscritos Nilcelso" + devNil.getConteudosInscritos());
+        System.out.println("Conteudos Concluidos Nilcelso" + devNil.getConteudosConcluidos());
+        System.out.println("XP Nilcelso: " + devNil.calcularTotalXp());
+
+        Dev devJoao = new Dev();
+        devJoao.setNome("João");
+        devJoao.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos Inscritos João" + devJoao.getConteudosInscritos());
+        devJoao.progredir();
+        System.out.println("Conteudos Inscritos João" + devJoao.getConteudosInscritos());
+        System.out.println("Conteudos conlcuidos João" + devJoao.getConteudosConcluidos());
+        System.out.println("XP João: " + devJoao.calcularTotalXp());
+
+
+
+
 
     }
 }
